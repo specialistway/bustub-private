@@ -22,7 +22,7 @@
 
 namespace bustub {
 
-using hash_t = std::size_t;
+using hash_t = std::size_t;  // 无符号整数类型
 
 class HashUtil {
  private:
@@ -42,6 +42,7 @@ class HashUtil {
     hash_t both[2] = {};
     both[0] = l;
     both[1] = r;
+    // 把 l 和 r 的原始字节拼接成一段二进制数据，然后对整个二进制块做一次哈希
     return HashBytes(reinterpret_cast<char *>(both), sizeof(hash_t) * 2);
   }
 
